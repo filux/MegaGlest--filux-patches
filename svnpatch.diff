@@ -117,7 +117,7 @@ Index: build-mg.sh
  	#Description:    Arch Linux
  	#Release:        rolling
  	#Codename:       n/a
-@@ -79,47 +81,40 @@
+@@ -79,47 +81,41 @@
  	#Distributor ID: Ubuntu
  	#Description:	 Ubuntu 12.04 LTS
  	#Release:	 12.04
@@ -155,6 +155,7 @@ Index: build-mg.sh
  				;;
  		esac
  		;;
++	*) ;;
  esac
  
 -#exit 1;
@@ -175,7 +176,7 @@ Index: build-mg.sh
  cd ..
  echo ''
  echo 'BUILD COMPLETE.'
-@@ -127,6 +122,9 @@
+@@ -127,6 +123,9 @@
  echo 'To build with google-breakpad support pass the path to the library as follows:'
  echo 'cmake -DBREAKPAD_ROOT=/home/softcoder/Code/google-breakpad/'
  echo 'To launch MegaGlest from the current directory, use:'
@@ -1700,25 +1701,43 @@ Index: mk/linux/start_megaglest
        ln -f -s $hasSO $SO_LINKEDLIBNAME
      fi
    fi
-@@ -72,32 +72,35 @@
+@@ -67,39 +67,60 @@
+ fi
  
- # OpenSuSE (11.3) and Fedora needs its own openAL
- #if [ -f /etc/SuSE-release -a -f lib/libopenal* ]; then
- if [ -f /etc/SuSE-release ] || [ -f /etc/fedora-release ] ; then
-   
-   if [ -f /etc/SuSE-release ] ; then
+ 
+ # now deal with the openal library [libopenal.so.0]
+ OS_TYPE=`uname -m`
+ 
+-# OpenSuSE (11.3) and Fedora needs its own openAL
+-#if [ -f /etc/SuSE-release -a -f lib/libopenal* ]; then
+-if [ -f /etc/SuSE-release ] || [ -f /etc/fedora-release ] ; then
+-  
+-  if [ -f /etc/SuSE-release ] ; then
 -    echo 'Detected Open Suse...' >&2
-+    echo 'Detected OpenSuse...' >&2
-   fi
+-  fi
+-
+-  if [ -f /etc/fedora-release ] ; then
+-    echo 'Detected Fedora...' >&2
+-  fi
++if [ `which lsb_release`'x' = 'x' ]; then
++	# lsb='false'
++	
++	if [ -e "/etc/os-release" ]; then
++		distribution=`awk -F "=" '/^ID/ {print $2}' /etc/os-release | awk '{ gsub("\"|\t",""); print }' | awk '{ gsub(" |\t","_"); print }'`
++		# codename=`awk -F "=" '/PRETTY_NAME/ {print $2}' /etc/os-release | awk '{ gsub("\"|\t",""); print }'`
++		# release_ver=`awk -F "=" '/VERSION_ID/ {print $2}' /etc/os-release | awk '{ gsub("\"|\t",""); print }'`
++		# if [ "$release_ver" != "" ]; then release="$release_ver"; else release="unknown"; fi
++	else
++		distribution="unknown"
++		# codename="unknown"; release="unknown"
++	fi
++else
++	# lsb='true'
  
-   if [ -f /etc/fedora-release ] ; then
-     echo 'Detected Fedora...' >&2
-   fi
- 
-   #rm -f lib/libopenal*
-   # libcurl*, libgnu*, libicu*, liblua*, libxerces*
-   #mv `ls -1 | grep -v '\.abc$' | grep -v '\.xyz$' | xargs`
- 
+-  #rm -f lib/libopenal*
+-  # libcurl*, libgnu*, libicu*, liblua*, libxerces*
+-  #mv `ls -1 | grep -v '\.abc$' | grep -v '\.xyz$' | xargs`
+-
 -  if [ ! -d lib_bkp ]; then
 -	  mkdir lib_bkp
 -	  mv lib/* lib_bkp/
@@ -1727,24 +1746,46 @@ Index: mk/linux/start_megaglest
 -	  cp lib_bkp/libicu* lib/
 -	  cp lib_bkp/liblua* lib/
 -	  cp lib_bkp/libxerces* lib/
-+  if [ ! -d lib_bkp ]; then mkdir lib_bkp; fi
-+
-+  if [ -d lib ] && [ -d lib_bkp ]; then
-+	mv lib/* lib_bkp/ 2>/dev/null
-+	cp -d lib_bkp/libcurl* lib/ 2>/dev/null
-+	cp -d lib_bkp/libgnu* lib/ 2>/dev/null
-+	cp -d lib_bkp/libicu* lib/ 2>/dev/null
-+	cp -d lib_bkp/liblua* lib/ 2>/dev/null
-+	cp -d lib_bkp/libxerces* lib/ 2>/dev/null
-   fi
-+
-+  if [ ! -d lib ]; then mkdir lib; fi
+-  fi
++	distribution=`lsb_release -i | awk -F':' '{ gsub(/^[ \t]*/,"",$2); print $2 }' | awk '{ gsub(" |\t","_"); print }'`
++	# release=`lsb_release -r | awk -F':' '{ gsub(/^[  \t]*/,"",$2); print $2 }'`
++	# codename=`lsb_release -c | awk -F':' '{ gsub(/^[ \t]*/,"",$2); print $2 }'`
  fi
  
++case $distribution in
++	SuSE|SUSE_LINUX|Opensuse|openSUSE_project|opensuse|Fedora|fedora|PCLinuxOS|pclinuxos|Mageia|mageia)
++		# OpenSuSE (11.3) and Fedora needs its own openAL
++		#if [ -f /etc/SuSE-release -a -f lib/libopenal* ]; then
++		
++		echo "Detected $distribution..." >&2
++
++		#rm -f lib/libopenal*
++		# libcurl*, libgnu*, libicu*, liblua*, libxerces*
++		#mv `ls -1 | grep -v '\.abc$' | grep -v '\.xyz$' | xargs`
++
++		if [ ! -d lib_bkp ]; then mkdir lib_bkp; fi
++
++		if [ -d "$LIBDIR" ] && [ -d lib_bkp ]; then
++			mv "$LIBDIR"/* lib_bkp/ 2>/dev/null
++			cp -d lib_bkp/libcurl* "$LIBDIR"/ 2>/dev/null
++			cp -d lib_bkp/libgnu* "$LIBDIR"/ 2>/dev/null
++			cp -d lib_bkp/libicu* "$LIBDIR"/ 2>/dev/null
++			cp -d lib_bkp/liblua* "$LIBDIR"/ 2>/dev/null
++			cp -d lib_bkp/libxerces* "$LIBDIR"/ 2>/dev/null
++		fi 
++	;;
++	
++	*) ;;
++esac
++
++if [ ! -d "$LIBDIR" ]; then mkdir "$LIBDIR"; fi
++
  OPENAL_LINKEDLIBNAME='libopenal.so.0'
  OPENAL_LIBLOOKUP1=${OPENAL_LINKEDLIBNAME}
  OPENAL_LIBLOOKUP2='libopenal.so.'
  
+ DIRECTFB_LINKEDLIBNAME='libdirectfb-1.0.so.0'
+ DIRECTFB_LIBLOOKUP1=${DIRECTFB_LINKEDLIBNAME}
 Index: source/glest_game/facilities/components.cpp
 ===================================================================
 --- source/glest_game/facilities/components.cpp	(wersja 4583)
