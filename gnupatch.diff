@@ -1,0 +1,92 @@
+diff -ur oldtutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml tutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml
+--- oldtutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml	2013-08-31 07:30:45.145595371 +0200
++++ tutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml	2013-08-15 16:09:49.108433372 +0200
+@@ -12,7 +12,7 @@
+ 	<tech-tree value="megapack"/>
+ 	<default-resources value="true"/>
+ 	<default-units value="false"/>
+-	<default-victory-conditions value="true"/>
++	<default-victory-conditions value="false"/>
+ 	<scripts>
+ 		<startup>
+ 			disableAi(1)
+@@ -79,7 +79,8 @@
+ <!--Messages-->
+ 				setDisplayText('WellDoneNextTutorial')
+ 				setPlayerAsWinner(0)
+-				endGame()
++				timer_event1 = startTimerEvent()
++				objective= 'end'
+ 			end		
+ 		</unitCreatedOfType>	
+ 		<cellTriggerEvent>
+@@ -98,5 +99,15 @@
+ 				objective= 'Harvest_Gold_And_Stone'
+ 			end
+ 		</cellTriggerEvent>
++		
++		<timerTriggerEvent>
++			if triggeredTimerEventId() == timer_event1 then
++				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 3 then
++					endGame()
++					--print('end')
++					stopTimerEvent(triggeredTimerEventId())
++				end
++			end
++		</timerTriggerEvent>
+ 	</scripts>
+ </scenario>
+diff -ur oldtutorials/2_basic_tutorial/2_basic_tutorial.xml tutorials/2_basic_tutorial/2_basic_tutorial.xml
+--- oldtutorials/2_basic_tutorial/2_basic_tutorial.xml	2013-08-31 07:30:45.588605884 +0200
++++ tutorials/2_basic_tutorial/2_basic_tutorial.xml	2013-08-15 16:36:39.846702922 +0200
+@@ -91,10 +91,21 @@
+ 		</unitCreatedOfType>
+ 		<unitDied>
+ 			if objective=='defend_from_attack' and unitCount(1)==0 then
+-				clearDisplayText()
++				setDisplayText('WellDoneNextTutorial')
+ 				setPlayerAsWinner(0)
+-				endGame()
++				timer_event1 = startTimerEvent()
++				objective= 'end'
+ 			end
+ 		</unitDied>
++
++		<timerTriggerEvent>
++			if triggeredTimerEventId() == timer_event1 then
++				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 3 then
++					endGame()
++					--print('end')
++					stopTimerEvent(triggeredTimerEventId())
++				end
++			end
++		</timerTriggerEvent>
+ 	</scripts>
+ </scenario>
+diff -ur oldtutorials/3_advanced_tutorial/3_advanced_tutorial.xml tutorials/3_advanced_tutorial/3_advanced_tutorial.xml
+--- oldtutorials/3_advanced_tutorial/3_advanced_tutorial.xml	2013-08-31 07:30:45.392601233 +0200
++++ tutorials/3_advanced_tutorial/3_advanced_tutorial.xml	2013-08-15 16:37:26.201781147 +0200
+@@ -93,10 +93,21 @@
+ 		</unitCreatedOfType>	
+ 		<unitDied>
+ 			if objective=='defeat_enemy' and unitCount(0)==0 then
+-				clearDisplayText()
++				setDisplayText('WellDoneNextTutorial')
+ 				setPlayerAsWinner(1)
+-				endGame()
++				timer_event1 = startTimerEvent()
++				objective= 'end'
+ 			end
+ 		</unitDied>
++
++		<timerTriggerEvent>
++			if triggeredTimerEventId() == timer_event1 then
++				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 3 then
++					endGame()
++					--print('end')
++					stopTimerEvent(triggeredTimerEventId())
++				end
++			end
++		</timerTriggerEvent>
+ 	</scripts>
+ </scenario>
