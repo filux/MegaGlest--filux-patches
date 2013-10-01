@@ -1,6 +1,6 @@
-diff -ur oldtutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml tutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml
---- oldtutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml	2013-08-31 07:30:45.145595371 +0200
-+++ tutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml	2013-08-15 16:09:49.108433372 +0200
+diff -ur data/glest_game/oldtutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml data/glest_game/tutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml
+--- data/glest_game/oldtutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml	2013-08-31 07:30:45.145595371 +0200
++++ data/glest_game/tutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml	2013-08-15 16:09:49.108433372 +0200
 @@ -12,7 +12,7 @@
  	<tech-tree value="megapack"/>
  	<default-resources value="true"/>
@@ -36,9 +36,9 @@ diff -ur oldtutorials/1_very_basic_tutorial/1_very_basic_tutorial.xml tutorials/
 +		</timerTriggerEvent>
  	</scripts>
  </scenario>
-diff -ur oldtutorials/2_basic_tutorial/2_basic_tutorial.xml tutorials/2_basic_tutorial/2_basic_tutorial.xml
---- oldtutorials/2_basic_tutorial/2_basic_tutorial.xml	2013-08-31 07:30:45.588605884 +0200
-+++ tutorials/2_basic_tutorial/2_basic_tutorial.xml	2013-08-15 16:36:39.846702922 +0200
+diff -ur data/glest_game/oldtutorials/2_basic_tutorial/2_basic_tutorial.xml data/glest_game/tutorials/2_basic_tutorial/2_basic_tutorial.xml
+--- data/glest_game/oldtutorials/2_basic_tutorial/2_basic_tutorial.xml	2013-08-31 07:30:45.588605884 +0200
++++ data/glest_game/tutorials/2_basic_tutorial/2_basic_tutorial.xml	2013-08-15 16:36:39.846702922 +0200
 @@ -91,10 +91,21 @@
  		</unitCreatedOfType>
  		<unitDied>
@@ -63,9 +63,9 @@ diff -ur oldtutorials/2_basic_tutorial/2_basic_tutorial.xml tutorials/2_basic_tu
 +		</timerTriggerEvent>
  	</scripts>
  </scenario>
-diff -ur oldtutorials/3_advanced_tutorial/3_advanced_tutorial.xml tutorials/3_advanced_tutorial/3_advanced_tutorial.xml
---- oldtutorials/3_advanced_tutorial/3_advanced_tutorial.xml	2013-08-31 07:30:45.392601233 +0200
-+++ tutorials/3_advanced_tutorial/3_advanced_tutorial.xml	2013-08-15 16:37:26.201781147 +0200
+diff -ur data/glest_game/oldtutorials/3_advanced_tutorial/3_advanced_tutorial.xml data/glest_game/tutorials/3_advanced_tutorial/3_advanced_tutorial.xml
+--- data/glest_game/oldtutorials/3_advanced_tutorial/3_advanced_tutorial.xml	2013-08-31 07:30:45.392601233 +0200
++++ data/glest_game/tutorials/3_advanced_tutorial/3_advanced_tutorial.xml	2013-08-15 16:37:26.201781147 +0200
 @@ -93,10 +93,21 @@
  		</unitCreatedOfType>	
  		<unitDied>

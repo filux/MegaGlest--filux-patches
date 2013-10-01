@@ -5,7 +5,7 @@ by commands:
   
 and additionally (because svn diff doesn't show it)
 
-  "patch -u -p0 < gnupatch.diff" from directory which contain subdirectory "tutorials" > ".../data/glest_game/ X /tutorials"
+  "patch -u -p0 < gnupatch.diff" from the same directory
 
 
 
