@@ -1,6 +1,6 @@
 Index: CMakeLists.txt
 ===================================================================
---- CMakeLists.txt	(wersja 4583)
+--- CMakeLists.txt	(wersja 4585)
 +++ CMakeLists.txt	(kopia robocza)
 @@ -82,13 +82,13 @@
                  #MESSAGE(STATUS "******* TEST2 MegaGlest Version #3 is [${VER_RELEASE}] ")
@@ -19,7 +19,7 @@ Index: CMakeLists.txt
  
 Index: build-mg.sh
 ===================================================================
---- build-mg.sh	(wersja 4583)
+--- build-mg.sh	(wersja 4585)
 +++ build-mg.sh	(kopia robocza)
 @@ -1,13 +1,15 @@
  #!/bin/bash
@@ -188,7 +188,7 @@ Index: build-mg.sh
 +exit 0
 Index: data/glest_game/data/lang/english.lng
 ===================================================================
---- data/glest_game/data/lang/english.lng	(wersja 4583)
+--- data/glest_game/data/lang/english.lng	(wersja 4585)
 +++ data/glest_game/data/lang/english.lng	(kopia robocza)
 @@ -1,66 +1,67 @@
  ; This is the main MegaGlest localization file (INI format)
@@ -458,7 +458,8 @@ Index: data/glest_game/data/lang/english.lng
  SavegameInfo=Information about selected game
  SelectionType=Unit selection type:
  SettingsSaved=Settings Saved
- ShadowIntensity=Shadow Intensity
+-ShadowIntensity=Shadow Intensity
++ShadowIntensity=Shadow Intensity:
  Delete=Delete
  NothingSelected=Nothing has been selected.
 -LeftAt=Player left at:
@@ -832,7 +833,7 @@ Index: data/glest_game/data/lang/english.lng
  FONT_TYPENAME=Times New Roman
 Index: data/glest_game/data/lang/hint/hint_english.lng
 ===================================================================
---- data/glest_game/data/lang/hint/hint_english.lng	(wersja 4583)
+--- data/glest_game/data/lang/hint/hint_english.lng	(wersja 4585)
 +++ data/glest_game/data/lang/hint/hint_english.lng	(kopia robocza)
 @@ -1,29 +1,30 @@
 -hint1=You can set/edit your player name in the 'options' menu,\naccessible from the main menu.
@@ -890,7 +891,7 @@ Index: data/glest_game/data/lang/hint/hint_english.lng
  hint45=Is a translation missing or bad? Please help translate MegaGlest! http://translate.megaglest.org
 Index: data/glest_game/tutorials/1_very_basic_tutorial/1_very_basic_tutorial_english.lng
 ===================================================================
---- data/glest_game/tutorials/1_very_basic_tutorial/1_very_basic_tutorial_english.lng	(wersja 4583)
+--- data/glest_game/tutorials/1_very_basic_tutorial/1_very_basic_tutorial_english.lng	(wersja 4585)
 +++ data/glest_game/tutorials/1_very_basic_tutorial/1_very_basic_tutorial_english.lng	(kopia robocza)
 @@ -1,7 +1,9 @@
 -TUTORIAL_NAME=#1 Basic Tutorial
@@ -914,7 +915,7 @@ Index: data/glest_game/tutorials/1_very_basic_tutorial/1_very_basic_tutorial_eng
  WellDoneNextTutorial=Good job! You can now proceed to the next tutorial.
 Index: data/glest_game/tutorials/2_basic_tutorial/2_basic_tutorial_english.lng
 ===================================================================
---- data/glest_game/tutorials/2_basic_tutorial/2_basic_tutorial_english.lng	(wersja 4583)
+--- data/glest_game/tutorials/2_basic_tutorial/2_basic_tutorial_english.lng	(wersja 4585)
 +++ data/glest_game/tutorials/2_basic_tutorial/2_basic_tutorial_english.lng	(kopia robocza)
 @@ -1,7 +1,9 @@
  TUTORIAL_NAME=#2 Basic Tutorial
@@ -938,7 +939,7 @@ Index: data/glest_game/tutorials/2_basic_tutorial/2_basic_tutorial_english.lng
 +WellDoneNextTutorial=Good job! You can now proceed to the next tutorial.
 Index: data/glest_game/tutorials/3_advanced_tutorial/3_advanced_tutorial_english.lng
 ===================================================================
---- data/glest_game/tutorials/3_advanced_tutorial/3_advanced_tutorial_english.lng	(wersja 4583)
+--- data/glest_game/tutorials/3_advanced_tutorial/3_advanced_tutorial_english.lng	(wersja 4585)
 +++ data/glest_game/tutorials/3_advanced_tutorial/3_advanced_tutorial_english.lng	(kopia robocza)
 @@ -1,7 +1,9 @@
 -TUTORIAL_NAME=Advanced Tutorial
@@ -963,7 +964,7 @@ Index: data/glest_game/tutorials/3_advanced_tutorial/3_advanced_tutorial_english
 +WellDoneNextTutorial=Good job! Now you can without having to worry proceed to scenarios with low difficulty. Have fun.
 Index: mk/cmake/Modules/FindIrcclient.cmake
 ===================================================================
---- mk/cmake/Modules/FindIrcclient.cmake	(wersja 4583)
+--- mk/cmake/Modules/FindIrcclient.cmake	(wersja 4585)
 +++ mk/cmake/Modules/FindIrcclient.cmake	(kopia robocza)
 @@ -36,20 +36,24 @@
    /sw # Fink
@@ -1010,7 +1011,7 @@ Index: mk/cmake/Modules/FindIrcclient.cmake
  MARK_AS_ADVANCED(IRCCLIENT_LIBRARY IRCCLIENT_INCLUDE_DIR)
 Index: mk/cmake/Modules/FindMiniupnpc.cmake
 ===================================================================
---- mk/cmake/Modules/FindMiniupnpc.cmake	(wersja 4583)
+--- mk/cmake/Modules/FindMiniupnpc.cmake	(wersja 4585)
 +++ mk/cmake/Modules/FindMiniupnpc.cmake	(kopia robocza)
 @@ -46,45 +46,56 @@
    /usr/local/include/miniupnpc) 
@@ -1191,7 +1192,7 @@ Index: mk/cmake/Modules/FindMiniupnpc.cmake
  
 Index: mk/fedora/buildRPMs.sh
 ===================================================================
---- mk/fedora/buildRPMs.sh	(wersja 4583)
+--- mk/fedora/buildRPMs.sh	(wersja 4585)
 +++ mk/fedora/buildRPMs.sh	(kopia robocza)
 @@ -63,13 +63,13 @@
  echo "installing fedora build tools..."
@@ -1210,7 +1211,7 @@ Index: mk/fedora/buildRPMs.sh
  
 Index: mk/linux/setupBuildDeps.sh
 ===================================================================
---- mk/linux/setupBuildDeps.sh	(wersja 4583)
+--- mk/linux/setupBuildDeps.sh	(wersja 4585)
 +++ mk/linux/setupBuildDeps.sh	(kopia robocza)
 @@ -1,56 +1,55 @@
 -#!/bin/sh
@@ -1688,7 +1689,7 @@ Index: mk/linux/setupBuildDeps.sh
 +exit 0
 Index: mk/linux/start_megaglest
 ===================================================================
---- mk/linux/start_megaglest	(wersja 4583)
+--- mk/linux/start_megaglest	(wersja 4585)
 +++ mk/linux/start_megaglest	(kopia robocza)
 @@ -9,15 +9,15 @@
    SO_LINKEDLIBNAME="$2"
@@ -1795,7 +1796,7 @@ Index: mk/linux/start_megaglest
  DIRECTFB_LIBLOOKUP1=${DIRECTFB_LINKEDLIBNAME}
 Index: source/glest_game/facilities/components.cpp
 ===================================================================
---- source/glest_game/facilities/components.cpp	(wersja 4583)
+--- source/glest_game/facilities/components.cpp	(wersja 4585)
 +++ source/glest_game/facilities/components.cpp	(kopia robocza)
 @@ -556,14 +556,14 @@
  }
@@ -1833,7 +1834,7 @@ Index: source/glest_game/facilities/components.cpp
  
 Index: source/glest_game/facilities/game_util.cpp
 ===================================================================
---- source/glest_game/facilities/game_util.cpp	(wersja 4583)
+--- source/glest_game/facilities/game_util.cpp	(wersja 4585)
 +++ source/glest_game/facilities/game_util.cpp	(kopia robocza)
 @@ -23,19 +23,19 @@
  
@@ -1982,7 +1983,7 @@ Index: source/glest_game/facilities/game_util.cpp
  	switch(i) {
 Index: source/glest_game/facilities/logger.cpp
 ===================================================================
---- source/glest_game/facilities/logger.cpp	(wersja 4583)
+--- source/glest_game/facilities/logger.cpp	(wersja 4585)
 +++ source/glest_game/facilities/logger.cpp	(kopia robocza)
 @@ -179,13 +179,14 @@
  		if(buttonCancel.mouseClick(x, y)) {
@@ -2060,7 +2061,7 @@ Index: source/glest_game/facilities/logger.cpp
  }}//end namespace
 Index: source/glest_game/game/chat_manager.cpp
 ===================================================================
---- source/glest_game/game/chat_manager.cpp	(wersja 4583)
+--- source/glest_game/game/chat_manager.cpp	(wersja 4585)
 +++ source/glest_game/game/chat_manager.cpp	(kopia robocza)
 @@ -36,15 +36,15 @@
  ChatManager::ChatManager() {
@@ -2102,7 +2103,7 @@ Index: source/glest_game/game/chat_manager.cpp
  			SystemFlags::OutputDebug(SystemFlags::debugSystem,"In [%s::%s Line: %d] key = [%c] [%d]\n",__FILE__,__FUNCTION__,__LINE__,key.keysym.sym,key.keysym.sym);
 Index: source/glest_game/game/console.cpp
 ===================================================================
---- source/glest_game/game/console.cpp	(wersja 4583)
+--- source/glest_game/game/console.cpp	(wersja 4585)
 +++ source/glest_game/game/console.cpp	(kopia robocza)
 @@ -32,13 +32,13 @@
  Console::Console() {
@@ -2121,7 +2122,7 @@ Index: source/glest_game/game/console.cpp
  	onlyChatMessagesInStoredLines=true;
 Index: source/glest_game/game/game.cpp
 ===================================================================
---- source/glest_game/game/game.cpp	(wersja 4583)
+--- source/glest_game/game/game.cpp	(wersja 4585)
 +++ source/glest_game/game/game.cpp	(kopia robocza)
 @@ -469,13 +469,13 @@
  
@@ -2408,7 +2409,7 @@ Index: source/glest_game/game/game.cpp
  		mainMessageBox.setEnabled(false);
 Index: source/glest_game/game/script_manager.cpp
 ===================================================================
---- source/glest_game/game/script_manager.cpp	(wersja 4583)
+--- source/glest_game/game/script_manager.cpp	(wersja 4585)
 +++ source/glest_game/game/script_manager.cpp	(kopia robocza)
 @@ -187,14 +187,14 @@
  }
@@ -2429,7 +2430,7 @@ Index: source/glest_game/game/script_manager.cpp
  	lastDeadUnitId = 0;
 Index: source/glest_game/graphics/renderer.cpp
 ===================================================================
---- source/glest_game/graphics/renderer.cpp	(wersja 4583)
+--- source/glest_game/graphics/renderer.cpp	(wersja 4585)
 +++ source/glest_game/graphics/renderer.cpp	(kopia robocza)
 @@ -2201,16 +2201,16 @@
  			text += lang.get("CellHint");
@@ -2530,7 +2531,7 @@ Index: source/glest_game/graphics/renderer.cpp
  		assert(false);
 Index: source/glest_game/main/battle_end.cpp
 ===================================================================
---- source/glest_game/main/battle_end.cpp	(wersja 4583)
+--- source/glest_game/main/battle_end.cpp	(wersja 4585)
 +++ source/glest_game/main/battle_end.cpp	(kopia robocza)
 @@ -59,15 +59,15 @@
  	mouse2d = 0;
@@ -2832,7 +2833,7 @@ Index: source/glest_game/main/battle_end.cpp
  	}
 Index: source/glest_game/main/battle_end.h
 ===================================================================
---- source/glest_game/main/battle_end.h	(wersja 4583)
+--- source/glest_game/main/battle_end.h	(wersja 4585)
 +++ source/glest_game/main/battle_end.h	(kopia robocza)
 @@ -39,12 +39,13 @@
  	Stats stats;
@@ -2850,7 +2851,7 @@ Index: source/glest_game/main/battle_end.h
  
 Index: source/glest_game/main/main.cpp
 ===================================================================
---- source/glest_game/main/main.cpp	(wersja 4583)
+--- source/glest_game/main/main.cpp	(wersja 4585)
 +++ source/glest_game/main/main.cpp	(kopia robocza)
 @@ -352,16 +352,16 @@
      	sdl_quitCalled = true;
@@ -2989,7 +2990,7 @@ Index: source/glest_game/main/main.cpp
  void MainWindow::eventKeyDown(SDL_KeyboardEvent key) {
  	SystemFlags::OutputDebug(SystemFlags::debugSystem,"In [%s::%s Line: %d] [%d]\n",__FILE__,__FUNCTION__,__LINE__,key.keysym.sym);
  
-@@ -3552,13 +3552,13 @@
+@@ -3558,13 +3558,13 @@
  		haveSpecialOutputCommandLineOption = true;
  	}
  
@@ -3004,7 +3005,7 @@ Index: source/glest_game/main/main.cpp
  //		Config::getInstance().setBool("DebugNetworkPackets",true,true);
  //		NetworkMessageIntro data(424336, "mg_version_x","player_x", 3, nmgstOk,444444, 555555, "english");
  //		unsigned char *buf = data.packMessage();
-@@ -5533,30 +5533,30 @@
+@@ -5539,30 +5539,30 @@
  }
  #endif
  
@@ -3045,7 +3046,7 @@ Index: source/glest_game/main/main.cpp
  
  // Callback when minidump written.
  static bool MinidumpCallback(const google_breakpad::MinidumpDescriptor& descriptor,
-@@ -5573,33 +5573,33 @@
+@@ -5579,33 +5579,33 @@
    }
  
    return succeeded;
@@ -3097,7 +3098,7 @@ Index: source/glest_game/main/main.cpp
  int glestMainSEHWrapper(int argc, char** argv) {
  #ifdef WIN32_STACK_TRACE
  	//printf("Hooking up WIN32_STACK_TRACE...\n");
-@@ -5643,31 +5643,31 @@
+@@ -5649,31 +5649,31 @@
  
  int glestMainWrapper(int argc, char** argv) {
  	//setlocale(LC_ALL, "zh_TW.UTF-8");
@@ -3143,7 +3144,7 @@ Index: source/glest_game/main/main.cpp
  	wstring dumpfilepath = utf8_decode(".");
 Index: source/glest_game/menu/menu_state_about.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_about.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_about.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_about.cpp	(kopia robocza)
 @@ -47,13 +47,13 @@
  	customModTextureAlpha = 0.f;
@@ -3162,7 +3163,7 @@ Index: source/glest_game/menu/menu_state_about.cpp
  
 Index: source/glest_game/menu/menu_state_connected_game.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_connected_game.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_connected_game.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_connected_game.cpp	(kopia robocza)
 @@ -174,187 +174,195 @@
  	labelDataSynchInfo.setFont(CoreData::getInstance().getMenuFontBig());
@@ -3721,7 +3722,7 @@ Index: source/glest_game/menu/menu_state_connected_game.cpp
  		    	for(unsigned int i = 0; i < languageList.size(); ++i) {
 Index: source/glest_game/menu/menu_state_connected_game.h
 ===================================================================
---- source/glest_game/menu/menu_state_connected_game.h	(wersja 4583)
+--- source/glest_game/menu/menu_state_connected_game.h	(wersja 4585)
 +++ source/glest_game/menu/menu_state_connected_game.h	(kopia robocza)
 @@ -49,12 +49,13 @@
  // 	class MenuStateConnectedGame
@@ -3757,7 +3758,7 @@ Index: source/glest_game/menu/menu_state_connected_game.h
  	GraphicListBox listBoxTeams[GameConstants::maxPlayers];
 Index: source/glest_game/menu/menu_state_custom_game.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_custom_game.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_custom_game.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_custom_game.cpp	(kopia robocza)
 @@ -109,12 +109,13 @@
  
@@ -4380,7 +4381,7 @@ Index: source/glest_game/menu/menu_state_custom_game.cpp
  		if(checkBoxScenario.getValue() == true) {
 Index: source/glest_game/menu/menu_state_custom_game.h
 ===================================================================
---- source/glest_game/menu/menu_state_custom_game.h	(wersja 4583)
+--- source/glest_game/menu/menu_state_custom_game.h	(wersja 4585)
 +++ source/glest_game/menu/menu_state_custom_game.h	(kopia robocza)
 @@ -42,12 +42,13 @@
  
@@ -4429,7 +4430,7 @@ Index: source/glest_game/menu/menu_state_custom_game.h
  	string currentTechName_factionPreview;
 Index: source/glest_game/menu/menu_state_graphic_info.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_graphic_info.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_graphic_info.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_graphic_info.cpp	(kopia robocza)
 @@ -29,21 +29,21 @@
  	MenuState(program, mainMenu, "info")
@@ -4457,7 +4458,7 @@ Index: source/glest_game/menu/menu_state_graphic_info.cpp
  	labelInternalInfo.setFont(CoreData::getInstance().getDisplayFontSmall());
 Index: source/glest_game/menu/menu_state_join_game.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_join_game.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_join_game.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_join_game.cpp	(kopia robocza)
 @@ -86,67 +86,70 @@
      if(fileExists(serversSavedFile) == true) {
@@ -4605,7 +4606,7 @@ Index: source/glest_game/menu/menu_state_join_game.cpp
  	}
 Index: source/glest_game/menu/menu_state_join_game.h
 ===================================================================
---- source/glest_game/menu/menu_state_join_game.h	(wersja 4583)
+--- source/glest_game/menu/menu_state_join_game.h	(wersja 4585)
 +++ source/glest_game/menu/menu_state_join_game.h	(kopia robocza)
 @@ -54,13 +54,19 @@
  	GraphicLabel labelInfo;
@@ -4630,7 +4631,7 @@ Index: source/glest_game/menu/menu_state_join_game.h
  	//Console console;
 Index: source/glest_game/menu/menu_state_keysetup.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_keysetup.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_keysetup.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_keysetup.cpp	(kopia robocza)
 @@ -45,67 +45,67 @@
  		this->parentUI = parentUI;
@@ -4894,7 +4895,7 @@ Index: source/glest_game/menu/menu_state_keysetup.cpp
  	//printf("MenuStateKeysetup::update A\n");
 Index: source/glest_game/menu/menu_state_keysetup.h
 ===================================================================
---- source/glest_game/menu/menu_state_keysetup.h	(wersja 4583)
+--- source/glest_game/menu/menu_state_keysetup.h	(wersja 4585)
 +++ source/glest_game/menu/menu_state_keysetup.h	(kopia robocza)
 @@ -47,12 +47,27 @@
  	int keyButtonsYBase;
@@ -4926,7 +4927,7 @@ Index: source/glest_game/menu/menu_state_keysetup.h
  
 Index: source/glest_game/menu/menu_state_load_game.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_load_game.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_load_game.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_load_game.cpp	(kopia robocza)
 @@ -32,15 +32,15 @@
  MenuStateLoadGame::MenuStateLoadGame(Program *program, MainMenu *mainMenu):
@@ -5082,7 +5083,7 @@ Index: source/glest_game/menu/menu_state_load_game.cpp
  
 Index: source/glest_game/menu/menu_state_masterserver.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_masterserver.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_masterserver.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_masterserver.cpp	(kopia robocza)
 @@ -52,13 +52,13 @@
  	serverInfoString="empty";
@@ -5542,7 +5543,7 @@ Index: source/glest_game/menu/menu_state_masterserver.cpp
                  if(Config::getInstance().getString("Masterserver","") != "") {
 Index: source/glest_game/menu/menu_state_mods.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_mods.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_mods.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_mods.cpp	(kopia robocza)
 @@ -74,176 +74,178 @@
  	selectedMapName 		= "";
@@ -5577,13 +5578,13 @@ Index: source/glest_game/menu/menu_state_mods.cpp
 +	techInfoXPos = 5;
  	keyTechScrollBarTitle1.registerGraphicComponent(containerName,"keyTechScrollBarTitle1");
 -	keyTechScrollBarTitle1.init(techInfoXPos,scrollListsYPos + 25,labelWidth,20);
-+	keyTechScrollBarTitle1.init(techInfoXPos,scrollListsYPos + 27,labelWidth,20);
++	keyTechScrollBarTitle1.init(techInfoXPos,scrollListsYPos + 32,labelWidth,20);
  	keyTechScrollBarTitle1.setText(lang.get("TechTitle1"));
  	keyTechScrollBarTitle1.setFont(CoreData::getInstance().getMenuFontBig());
  	keyTechScrollBarTitle1.setFont3D(CoreData::getInstance().getMenuFontBig3D());
  	keyTechScrollBarTitle2.registerGraphicComponent(containerName,"keyTechScrollBarTitle2");
 -	keyTechScrollBarTitle2.init(techInfoXPos + 200,scrollListsYPos + 25,labelWidth,20);
-+	keyTechScrollBarTitle2.init(techInfoXPos + keyButtonsWidth - WidthXCorr1 - 18,scrollListsYPos + 20,labelWidth,20);
++	keyTechScrollBarTitle2.init(techInfoXPos + keyButtonsWidth - WidthXCorr1 - 18,scrollListsYPos + 18,labelWidth,20);
  	keyTechScrollBarTitle2.setText(lang.get("TechTitle2"));
  	keyTechScrollBarTitle2.setFont(CoreData::getInstance().getMenuFontNormal());
  	keyTechScrollBarTitle2.setFont3D(CoreData::getInstance().getMenuFontNormal3D());
@@ -5592,13 +5593,13 @@ Index: source/glest_game/menu/menu_state_mods.cpp
 +	mapInfoXPos = techInfoXPos+keyButtonsWidth-WidthXCorr1+15+10;
  	keyMapScrollBarTitle1.registerGraphicComponent(containerName,"keyMapScrollBarTitle1");
 -	keyMapScrollBarTitle1.init(mapInfoXPos,scrollListsYPos + 25,labelWidth,20);
-+	keyMapScrollBarTitle1.init(mapInfoXPos + 50,scrollListsYPos + 27,labelWidth,20);
++	keyMapScrollBarTitle1.init(mapInfoXPos + 50,scrollListsYPos + 32,labelWidth,20);
  	keyMapScrollBarTitle1.setText(lang.get("MapTitle1"));
  	keyMapScrollBarTitle1.setFont(CoreData::getInstance().getMenuFontBig());
  	keyMapScrollBarTitle1.setFont3D(CoreData::getInstance().getMenuFontBig3D());
  	keyMapScrollBarTitle2.registerGraphicComponent(containerName,"keyMapScrollBarTitle2");
 -	keyMapScrollBarTitle2.init(mapInfoXPos + 200,scrollListsYPos + 25,labelWidth,20);
-+	keyMapScrollBarTitle2.init(mapInfoXPos + keyButtonsWidth - 18,scrollListsYPos + 20,labelWidth,20);
++	keyMapScrollBarTitle2.init(mapInfoXPos + keyButtonsWidth - 18,scrollListsYPos + 18,labelWidth,20);
  	keyMapScrollBarTitle2.setText(lang.get("MapTitle2"));
  	keyMapScrollBarTitle2.setFont(CoreData::getInstance().getMenuFontNormal());
  	keyMapScrollBarTitle2.setFont3D(CoreData::getInstance().getMenuFontNormal3D());
@@ -5607,7 +5608,7 @@ Index: source/glest_game/menu/menu_state_mods.cpp
 +	tilesetInfoXPos = mapInfoXPos+keyButtonsWidth+15+10;
  	keyTilesetScrollBarTitle1.registerGraphicComponent(containerName,"keyTilesetScrollBarTitle1");
 -	keyTilesetScrollBarTitle1.init(tilesetInfoXPos,scrollListsYPos + 25,labelWidth,20);
-+	keyTilesetScrollBarTitle1.init(tilesetInfoXPos + 35,scrollListsYPos + 27,labelWidth,20);
++	keyTilesetScrollBarTitle1.init(tilesetInfoXPos + 35,scrollListsYPos + 32,labelWidth,20);
  	keyTilesetScrollBarTitle1.setText(lang.get("TilesetTitle1"));
  	keyTilesetScrollBarTitle1.setFont(CoreData::getInstance().getMenuFontBig());
  	keyTilesetScrollBarTitle1.setFont3D(CoreData::getInstance().getMenuFontBig3D());
@@ -5617,7 +5618,7 @@ Index: source/glest_game/menu/menu_state_mods.cpp
 +	scenarioInfoXPos = tilesetInfoXPos+keyButtonsWidth-WidthXCorr2+10;
  	keyScenarioScrollBarTitle1.registerGraphicComponent(containerName,"keyScenarioScrollBarTitle1");
 -	keyScenarioScrollBarTitle1.init(scenarioInfoXPos,scrollListsYPos + 25,labelWidth,20);
-+	keyScenarioScrollBarTitle1.init(scenarioInfoXPos + 50,scrollListsYPos + 27,labelWidth,20);
++	keyScenarioScrollBarTitle1.init(scenarioInfoXPos + 50,scrollListsYPos + 32,labelWidth,20);
  	keyScenarioScrollBarTitle1.setText(lang.get("ScenarioTitle1"));
  	keyScenarioScrollBarTitle1.setFont(CoreData::getInstance().getMenuFontBig());
  	keyScenarioScrollBarTitle1.setFont3D(CoreData::getInstance().getMenuFontBig3D());
@@ -6280,7 +6281,7 @@ Index: source/glest_game/menu/menu_state_mods.cpp
  
 Index: source/glest_game/menu/menu_state_mods.h
 ===================================================================
---- source/glest_game/menu/menu_state_mods.h	(wersja 4583)
+--- source/glest_game/menu/menu_state_mods.h	(wersja 4585)
 +++ source/glest_game/menu/menu_state_mods.h	(kopia robocza)
 @@ -120,12 +120,16 @@
  	int keyButtonsToRender;
@@ -6301,7 +6302,7 @@ Index: source/glest_game/menu/menu_state_mods.h
  	std::vector<std::string> techListRemote;
 Index: source/glest_game/menu/menu_state_new_game.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_new_game.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_new_game.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_new_game.cpp	(kopia robocza)
 @@ -37,31 +37,34 @@
  MenuStateNewGame::MenuStateNewGame(Program *program, MainMenu *mainMenu):
@@ -6352,7 +6353,7 @@ Index: source/glest_game/menu/menu_state_new_game.cpp
  	buttonTutorial.setText(lang.get("Tutorial"));
 Index: source/glest_game/menu/menu_state_options.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_options.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_options.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_options.cpp	(kopia robocza)
 @@ -44,68 +44,72 @@
  		Lang &lang= Lang::getInstance();
@@ -6771,7 +6772,7 @@ Index: source/glest_game/menu/menu_state_options.cpp
  
 Index: source/glest_game/menu/menu_state_options.h
 ===================================================================
---- source/glest_game/menu/menu_state_options.h	(wersja 4583)
+--- source/glest_game/menu/menu_state_options.h	(wersja 4585)
 +++ source/glest_game/menu/menu_state_options.h	(kopia robocza)
 @@ -65,12 +65,26 @@
  	GraphicLabel labelChatStaysActive;
@@ -6802,7 +6803,7 @@ Index: source/glest_game/menu/menu_state_options.h
  	GraphicLabel labelCustomTranslation;
 Index: source/glest_game/menu/menu_state_options_graphics.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_options_graphics.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_options_graphics.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_options_graphics.cpp	(kopia robocza)
 @@ -46,74 +46,76 @@
  		Config &config= Config::getInstance();
@@ -6964,7 +6965,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  
  		const string selectionType=toLower(config.getString("SelectionType",Config::colorPicking));
  		if( selectionType==Config::colorPicking)
-@@ -185,32 +191,34 @@
+@@ -185,105 +191,113 @@
  			listBoxSelectionType.setSelectedItemIndex(2);
  		else
  			listBoxSelectionType.setSelectedItemIndex(0);
@@ -7001,14 +7002,27 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  		listBoxShadowTextureSize.setSelectedItemIndex(1,false);
  		listBoxShadowTextureSize.setSelectedItem(intToStr(config.getInt("ShadowTextureSize","512")),false);
  		currentLine-=lineOffset;
-@@ -229,61 +237,66 @@
+ 
+ 		//shadows
++		lineHorizontal8.init(currentLabelStart-10, currentLine+25,lineLength,1);
+ 		labelShadowIntensity.registerGraphicComponent(containerName,"labelShadowIntensity");
+ 		labelShadowIntensity.init(currentLabelStart, currentLine);
+ 		labelShadowIntensity.setText(lang.get("ShadowIntensity"));
+ 
+ 		listBoxShadowIntensity.registerGraphicComponent(containerName,"listBoxShadowIntensity");
+-		listBoxShadowIntensity.init(currentColumnStart, currentLine, 200);
++		listBoxShadowIntensity.init(currentColumnStart, currentLine, 90);
+ 		for (float f=0.5f;f<3.0f;f=f+0.1f) {
+ 			listBoxShadowIntensity.pushBackItem(floatToStr(f));
+ 		}
+ 		float shadowIntensity=config.getFloat("ShadowIntensity","1.0");
  		if(shadowIntensity<=0.0f) shadowIntensity=1.0f;
  		listBoxShadowIntensity.setSelectedItem(floatToStr(shadowIntensity),false);
  
  		currentLine-=lineOffset;
  
  		//textures 3d
-+		lineHorizontal8.init(currentLabelStart-10, currentLine+25,lineLength,1);
++		lineHorizontal9.init(currentLabelStart-10, currentLine+25,lineLength,1);
  		labelTextures3D.registerGraphicComponent(containerName,"labelTextures3D");
  		labelTextures3D.init(currentLabelStart, currentLine);
  
@@ -7019,7 +7033,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  		currentLine-=lineOffset;
  
  		//lights
-+		lineHorizontal9.init(currentLabelStart-10, currentLine+25,lineLength,1);
++		lineHorizontal10.init(currentLabelStart-10, currentLine+25,lineLength,1);
  		labelLights.registerGraphicComponent(containerName,"labelLights");
  		labelLights.init(currentLabelStart, currentLine);
  		labelLights.setText(lang.get("MaxLights"));
@@ -7034,7 +7048,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  		currentLine-=lineOffset;
  
  		//unit particles
-+		lineHorizontal10.init(currentLabelStart-10, currentLine+25,lineLength,1);
++		lineHorizontal11.init(currentLabelStart-10, currentLine+25,lineLength,1);
  		labelUnitParticles.registerGraphicComponent(containerName,"labelUnitParticles");
  		labelUnitParticles.init(currentLabelStart,currentLine);
  		labelUnitParticles.setText(lang.get("ShowUnitParticles"));
@@ -7045,7 +7059,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  		currentLine-=lineOffset;
  
  		//tileset particles
-+		lineHorizontal11.init(currentLabelStart-10, currentLine+25,lineLength,1);
++		lineHorizontal12.init(currentLabelStart-10, currentLine+25,lineLength,1);
  		labelTilesetParticles.registerGraphicComponent(containerName,"labelTilesetParticles");
  		labelTilesetParticles.init(currentLabelStart,currentLine);
  		labelTilesetParticles.setText(lang.get("ShowTilesetParticles"));
@@ -7056,7 +7070,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  		currentLine-=lineOffset;
  
  		//animated tileset objects
-+		lineHorizontal12.init(currentLabelStart-10, currentLine+25,lineLength,1);
++		lineHorizontal13.init(currentLabelStart-10, currentLine+25,lineLength,1);
  		labelAnimatedTilesetObjects.registerGraphicComponent(containerName,"labelAnimatedTilesetObjects");
  		labelAnimatedTilesetObjects.init(currentLabelStart,currentLine);
  		labelAnimatedTilesetObjects.setText(lang.get("AnimatedTilesetObjects"));
@@ -7070,14 +7084,14 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  		listBoxAnimatedTilesetObjects.pushBackItem("50");
  		listBoxAnimatedTilesetObjects.pushBackItem("100");
  		listBoxAnimatedTilesetObjects.pushBackItem("300");
-@@ -291,31 +304,34 @@
+@@ -291,31 +305,34 @@
  		listBoxAnimatedTilesetObjects.pushBackItem("∞");
  		listBoxAnimatedTilesetObjects.setSelectedItem("∞",true);
  		listBoxAnimatedTilesetObjects.setSelectedItem(config.getString("AnimatedTilesetObjects","-1"),false);
  		currentLine-=lineOffset;
  
  		//unit particles
-+		lineHorizontal13.init(currentLabelStart-10, currentLine+25,lineLength,1);
++		lineHorizontal14.init(currentLabelStart-10, currentLine+25,lineLength,1);
  		labelMapPreview.registerGraphicComponent(containerName,"labelMapPreview");
  		labelMapPreview.init(currentLabelStart,currentLine);
  		labelMapPreview.setText(lang.get("ShowMapPreview"));
@@ -7088,7 +7102,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  		currentLine-=lineOffset;
  
  		// Texture Compression flag
-+		lineHorizontal14.init(currentLabelStart-10, currentLine+25,lineLength,1);
++		lineHorizontal15.init(currentLabelStart-10, currentLine+25,lineLength,1);
  		labelEnableTextureCompression.registerGraphicComponent(containerName,"labelEnableTextureCompression");
  		labelEnableTextureCompression.init(currentLabelStart ,currentLine);
  		labelEnableTextureCompression.setText(lang.get("EnableTextureCompression"));
@@ -7098,21 +7112,21 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  		checkBoxEnableTextureCompression.setValue(config.getBool("EnableTextureCompression","false"));
  		currentLine-=lineOffset;
  
-+		lineHorizontal15.init(currentLabelStart-10, currentLine+25,lineLength,1);
++		lineHorizontal16.init(currentLabelStart-10, currentLine+25,lineLength,1);
  		labelRainEffect.registerGraphicComponent(containerName,"labelRainEffect");
  		labelRainEffect.init(currentLabelStart ,currentLine);
  		labelRainEffect.setText(lang.get("RainEffectMenuGame"));
  
  		checkBoxRainEffectMenu.registerGraphicComponent(containerName,"checkBoxRainEffectMenu");
  		checkBoxRainEffectMenu.init(currentColumnStart ,currentLine );
-@@ -327,41 +343,43 @@
+@@ -327,41 +344,43 @@
  
  		checkBoxRainEffect.registerGraphicComponent(containerName,"checkBoxRainEffect");
  		checkBoxRainEffect.init(currentColumnStart+42 ,currentLine );
  		checkBoxRainEffect.setValue(config.getBool("RainEffect","true"));
  		currentLine-=lineOffset;
  
-+		lineHorizontal16.init(currentLabelStart-10, currentLine+25,lineLength,1);
++		lineHorizontal17.init(currentLabelStart-10, currentLine+25,lineLength,1);
  		labelVideos.registerGraphicComponent(containerName,"labelVideos");
  		labelVideos.init(currentLabelStart ,currentLine);
  		labelVideos.setText(lang.get("EnableVideos"));
@@ -7120,7 +7134,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  		checkBoxVideos.registerGraphicComponent(containerName,"checkBoxVideos");
  		checkBoxVideos.init(currentColumnStart ,currentLine );
  		checkBoxVideos.setValue(config.getBool("EnableVideos","true"));
-+		lineHorizontal17.init(currentLabelStart-10, currentLine-5,lineLength,1);
++		lineHorizontal18.init(currentLabelStart-10, currentLine-5,lineLength,1);
  
  		// end
  
@@ -7153,7 +7167,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  	catch(exception &e) {
  		SystemFlags::OutputDebug(SystemFlags::debugError,"In [%s::%s Line: %d] Error loading options: %s\n",__FILE__,__FUNCTION__,__LINE__,e.what());
  		throw megaglest_runtime_error(string("Error loading options msg: ") + e.what());
-@@ -371,26 +389,26 @@
+@@ -371,26 +390,26 @@
  void MenuStateOptionsGraphics::reloadUI() {
  	Lang &lang= Lang::getInstance();
  
@@ -7186,7 +7200,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  	listboxData.push_back("None");
  	listboxData.push_back("OpenAL");
  // deprecated as of 3.6.1
-@@ -405,18 +423,18 @@
+@@ -405,18 +424,18 @@
  
  	listboxData.clear();
  	listboxData.push_back("Bilinear");
@@ -7211,7 +7225,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  		listboxData.push_back(floatToStr(f));
  	}
  	listBoxShadowIntensity.setItems(listboxData);
-@@ -442,13 +460,13 @@
+@@ -442,13 +461,13 @@
  
  	labelMapPreview.setText(lang.get("ShowMapPreview"));
  
@@ -7226,7 +7240,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  	buttonOk.setText(lang.get("Save"));
  	buttonReturn.setText(lang.get("Return"));
  
-@@ -643,28 +661,28 @@
+@@ -643,28 +662,28 @@
  		//mainMenu->setState(new MenuStateOptionsGraphics(program, mainMenu)); // open keyboard shortcuts setup screen
  		//mainMenu->setState(new MenuStateOptionsNetwork(program, mainMenu)); // open keyboard shortcuts setup screen
  		mainMenu->setState(new MenuStateKeysetup(program, mainMenu,this->parentUI)); // open keyboard shortcuts setup screen
@@ -7259,7 +7273,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  		}
  	else if(buttonAutoConfig.mouseClick(x, y)){
  		soundRenderer.playFx(coreData.getClickSoundA());
-@@ -830,12 +848,30 @@
+@@ -830,12 +849,31 @@
  
  		renderer.renderLabel(&labelSelectionType);
  		renderer.renderListBox(&listBoxSelectionType);
@@ -7284,6 +7298,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
 +		renderer.renderLine(&lineHorizontal15);
 +		renderer.renderLine(&lineHorizontal16);
 +		renderer.renderLine(&lineHorizontal17);
++		renderer.renderLine(&lineHorizontal18);
  	}
  
  	renderer.renderConsole(&console,false,true);
@@ -7292,9 +7307,9 @@ Index: source/glest_game/menu/menu_state_options_graphics.cpp
  
 Index: source/glest_game/menu/menu_state_options_graphics.h
 ===================================================================
---- source/glest_game/menu/menu_state_options_graphics.h	(wersja 4583)
+--- source/glest_game/menu/menu_state_options_graphics.h	(wersja 4585)
 +++ source/glest_game/menu/menu_state_options_graphics.h	(kopia robocza)
-@@ -86,12 +86,30 @@
+@@ -86,12 +86,31 @@
  	GraphicLabel labelVideos;
  	GraphicCheckBox checkBoxVideos;
  
@@ -7318,6 +7333,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.h
 +	GraphicLine lineHorizontal15;
 +	GraphicLine lineHorizontal16;
 +	GraphicLine lineHorizontal17;
++	GraphicLine lineHorizontal18;
 +
  	ProgramState **parentUI;
  	time_t screenModeChangedTimer;
@@ -7327,7 +7343,7 @@ Index: source/glest_game/menu/menu_state_options_graphics.h
  
 Index: source/glest_game/menu/menu_state_options_network.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_options_network.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_options_network.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_options_network.cpp	(kopia robocza)
 @@ -42,91 +42,94 @@
  		containerName = "Options";
@@ -7639,7 +7655,7 @@ Index: source/glest_game/menu/menu_state_options_network.cpp
  
 Index: source/glest_game/menu/menu_state_options_network.h
 ===================================================================
---- source/glest_game/menu/menu_state_options_network.h	(wersja 4583)
+--- source/glest_game/menu/menu_state_options_network.h	(wersja 4585)
 +++ source/glest_game/menu/menu_state_options_network.h	(kopia robocza)
 @@ -61,12 +61,23 @@
  	GraphicLabel labelEnableFTPServerInternetTechtreeXfer;
@@ -7667,7 +7683,7 @@ Index: source/glest_game/menu/menu_state_options_network.h
  	void mouseClick(int x, int y, MouseButton mouseButton);
 Index: source/glest_game/menu/menu_state_options_sound.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_options_sound.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_options_sound.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_options_sound.cpp	(kopia robocza)
 @@ -42,106 +42,112 @@
  		containerName = "Options";
@@ -7941,7 +7957,7 @@ Index: source/glest_game/menu/menu_state_options_sound.cpp
  
 Index: source/glest_game/menu/menu_state_options_sound.h
 ===================================================================
---- source/glest_game/menu/menu_state_options_sound.h	(wersja 4583)
+--- source/glest_game/menu/menu_state_options_sound.h	(wersja 4585)
 +++ source/glest_game/menu/menu_state_options_sound.h	(kopia robocza)
 @@ -42,12 +42,18 @@
  	GraphicLabel labelVolumeAmbient;
@@ -7964,7 +7980,7 @@ Index: source/glest_game/menu/menu_state_options_sound.h
  public:
 Index: source/glest_game/menu/menu_state_root.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_root.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_root.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_root.cpp	(kopia robocza)
 @@ -37,58 +37,68 @@
  MenuStateRoot::MenuStateRoot(Program *program, MainMenu *mainMenu):
@@ -8167,7 +8183,7 @@ Index: source/glest_game/menu/menu_state_root.cpp
  		if(SystemFlags::getSystemSettingType(SystemFlags::debugSystem).enabled) SystemFlags::OutputDebug(SystemFlags::debugSystem,"In [%s::%s Line: %d] keystate.mod [%d]\n",__FILE__,__FUNCTION__,__LINE__,keystate.mod);
 Index: source/glest_game/menu/menu_state_scenario.cpp
 ===================================================================
---- source/glest_game/menu/menu_state_scenario.cpp	(wersja 4583)
+--- source/glest_game/menu/menu_state_scenario.cpp	(wersja 4585)
 +++ source/glest_game/menu/menu_state_scenario.cpp	(kopia robocza)
 @@ -51,14 +51,14 @@
  	catch(const std::exception &ex) {
@@ -8319,7 +8335,7 @@ Index: source/glest_game/menu/menu_state_scenario.cpp
  		// this delay is done to make it possible to switch faster
 Index: source/glest_game/menu/menu_state_scenario.h
 ===================================================================
---- source/glest_game/menu/menu_state_scenario.h	(wersja 4583)
+--- source/glest_game/menu/menu_state_scenario.h	(wersja 4585)
 +++ source/glest_game/menu/menu_state_scenario.h	(kopia robocza)
 @@ -27,12 +27,13 @@
  	GraphicButton buttonReturn;
@@ -8337,7 +8353,7 @@ Index: source/glest_game/menu/menu_state_scenario.h
  
 Index: source/glest_game/menu/server_line.cpp
 ===================================================================
---- source/glest_game/menu/server_line.cpp	(wersja 4583)
+--- source/glest_game/menu/server_line.cpp	(wersja 4585)
 +++ source/glest_game/menu/server_line.cpp	(kopia robocza)
 @@ -34,13 +34,13 @@
  	this->countryTexture= NULL;
@@ -8506,7 +8522,7 @@ Index: source/glest_game/menu/server_line.cpp
  }//end namespace
 Index: source/glest_game/network/client_interface.cpp
 ===================================================================
---- source/glest_game/network/client_interface.cpp	(wersja 4583)
+--- source/glest_game/network/client_interface.cpp	(wersja 4585)
 +++ source/glest_game/network/client_interface.cpp	(kopia robocza)
 @@ -1646,15 +1646,15 @@
  				else {
@@ -8546,7 +8562,7 @@ Index: source/glest_game/network/client_interface.cpp
  						sleep(0);
 Index: source/glest_game/network/connection_slot.cpp
 ===================================================================
---- source/glest_game/network/connection_slot.cpp	(wersja 4583)
+--- source/glest_game/network/connection_slot.cpp	(wersja 4585)
 +++ source/glest_game/network/connection_slot.cpp	(kopia robocza)
 @@ -1471,13 +1471,13 @@
  								if((maxFrameCountLagAllowed > 0 && clientLagCount > maxFrameCountLagAllowed) ||
@@ -8580,7 +8596,7 @@ Index: source/glest_game/network/connection_slot.cpp
  
 Index: source/glest_game/network/server_interface.cpp
 ===================================================================
---- source/glest_game/network/server_interface.cpp	(wersja 4583)
+--- source/glest_game/network/server_interface.cpp	(wersja 4585)
 +++ source/glest_game/network/server_interface.cpp	(kopia robocza)
 @@ -1906,22 +1906,22 @@
  							waitForHosts += ", ";
@@ -8611,7 +8627,7 @@ Index: source/glest_game/network/server_interface.cpp
  					uint32 loadingStatus = nmls_NONE;
 Index: source/glest_game/type_instances/unit.cpp
 ===================================================================
---- source/glest_game/type_instances/unit.cpp	(wersja 4583)
+--- source/glest_game/type_instances/unit.cpp	(wersja 4585)
 +++ source/glest_game/type_instances/unit.cpp	(kopia robocza)
 @@ -3064,20 +3064,20 @@
      }
@@ -8658,7 +8674,7 @@ Index: source/glest_game/type_instances/unit.cpp
  		if(totalUpgrade.getMaxHpRegeneration() != 0) {
 Index: source/glest_game/world/scenario.cpp
 ===================================================================
---- source/glest_game/world/scenario.cpp	(wersja 4583)
+--- source/glest_game/world/scenario.cpp	(wersja 4585)
 +++ source/glest_game/world/scenario.cpp	(kopia robocza)
 @@ -324,28 +324,28 @@
          scenarioInfo->defaultUnits = scenarioNode->getChild("default-units")->getAttribute("value")->getBoolValue();
@@ -8697,7 +8713,7 @@ Index: source/glest_game/world/scenario.cpp
  	string tmp_description = "";
 Index: source/shared_lib/CMakeLists.txt
 ===================================================================
---- source/shared_lib/CMakeLists.txt	(wersja 4583)
+--- source/shared_lib/CMakeLists.txt	(wersja 4585)
 +++ source/shared_lib/CMakeLists.txt	(kopia robocza)
 @@ -321,27 +321,27 @@
  		MESSAGE(STATUS "*** Using miniupnpc lib found in [${MINIUPNP_INCLUDE_DIR}] MINIUPNP_FOUND [${MINIUPNP_FOUND}] MINIUPNP_LIBRARY [${MINIUPNP_LIBRARY}]")
@@ -8842,7 +8858,7 @@ Index: source/shared_lib/CMakeLists.txt
  	# ADD_LIBRARY(libmegaglest STATIC ${MG_SOURCE_FILES} ${MG_INCLUDE_FILES})
 Index: source/shared_lib/include/platform/posix/socket.h
 ===================================================================
---- source/shared_lib/include/platform/posix/socket.h	(wersja 4583)
+--- source/shared_lib/include/platform/posix/socket.h	(wersja 4585)
 +++ source/shared_lib/include/platform/posix/socket.h	(kopia robocza)
 @@ -125,12 +125,13 @@
  
@@ -8860,7 +8876,7 @@ Index: source/shared_lib/include/platform/posix/socket.h
  	//SimpleTaskThread *pingThread;
 Index: source/shared_lib/sources/miniz/miniz.c
 ===================================================================
---- source/shared_lib/sources/miniz/miniz.c	(wersja 4583)
+--- source/shared_lib/sources/miniz/miniz.c	(wersja 4585)
 +++ source/shared_lib/sources/miniz/miniz.c	(kopia robocza)
 @@ -1,15 +1,16 @@
 -/* miniz.c v1.14 - public domain deflate/inflate, zlib-subset, ZIP reading/writing/appending, PNG writing
@@ -8897,7 +8913,7 @@ Index: source/shared_lib/sources/miniz/miniz.c
    extern "C" {
 Index: source/shared_lib/sources/platform/posix/ircclient.cpp
 ===================================================================
---- source/shared_lib/sources/platform/posix/ircclient.cpp	(wersja 4583)
+--- source/shared_lib/sources/platform/posix/ircclient.cpp	(wersja 4585)
 +++ source/shared_lib/sources/platform/posix/ircclient.cpp	(kopia robocza)
 @@ -808,15 +808,13 @@
                  this->getQuitStatus() == false && iAttempts <= 7; ++iAttempts) {
@@ -8918,7 +8934,7 @@ Index: source/shared_lib/sources/platform/posix/ircclient.cpp
              for(;this->getQuitStatus() == false;) {
 Index: source/shared_lib/sources/platform/posix/socket.cpp
 ===================================================================
---- source/shared_lib/sources/platform/posix/socket.cpp	(wersja 4583)
+--- source/shared_lib/sources/platform/posix/socket.cpp	(wersja 4585)
 +++ source/shared_lib/sources/platform/posix/socket.cpp	(kopia robocza)
 @@ -1750,13 +1750,22 @@
  		SystemFlags::OutputDebug(SystemFlags::debugError,"SOCKET DISCONNECTED In [%s::%s Line: %d] error while selecting socket data, err = %d, error = %s\n",__FILE__,__FUNCTION__,__LINE__,i,getLastSocketErrorFormattedText().c_str());
@@ -8946,7 +8962,7 @@ Index: source/shared_lib/sources/platform/posix/socket.cpp
  	//return (i == 1 && FD_ISSET(sock, &set));
 Index: source/tools/support/linux/system_report
 ===================================================================
---- source/tools/support/linux/system_report	(wersja 4583)
+--- source/tools/support/linux/system_report	(wersja 4585)
 +++ source/tools/support/linux/system_report	(kopia robocza)
 @@ -26,13 +26,13 @@
  # End of configuration section
